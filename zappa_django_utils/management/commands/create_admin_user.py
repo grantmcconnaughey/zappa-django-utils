@@ -1,9 +1,11 @@
 from django.core.management.base import BaseCommand, CommandError
 from django.conf import settings
-from django.contrib.auth.models import User
+from django.contrib.auth import import get_user_model
 
 import random
 import string
+
+User = get_user_model()
 
 class Command(BaseCommand):
     help = 'Creates a default "admin" user'
